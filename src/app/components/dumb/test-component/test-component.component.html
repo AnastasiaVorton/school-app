@@ -1,0 +1,16 @@
+<h2>{{test.question}}</h2>
+
+<div *ngIf="test.test_type === 'single_choice'">
+  <ul *ngFor="let choice of test.choices">
+    <input type="radio" id="radioButton">
+    <label for="radioButton">{{choice.content}}</label>
+  </ul>
+</div>
+
+<div *ngIf="test.test_type === 'multiple_choice'">
+  <ul *ngFor="let choice of test.choices">
+    <input type="checkbox" id="checkboxButton">
+    <label for="checkboxButton">{{choice.content}}</label>
+  </ul>
+</div>
+

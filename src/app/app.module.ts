@@ -7,7 +7,12 @@ import { TeacherPageComponent } from './pages/teacher-page/teacher-page.componen
 import { StudentPageComponent } from './pages/student-page/student-page.component';
 import { LessonContainerComponent } from './components/smart/lesson-container/lesson-container.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { ContentComponentComponent } from './components/dumb/content-component/content-component.component';
+import { ContentComponentComponent } from './components/dumb/header-component/header-component.component';
+import { TextComponentComponent } from './components/dumb/text-component/text-component.component';
+import { ImageComponentComponent } from './components/dumb/image-component/image-component.component';
+import { TestComponentComponent } from './components/dumb/test-component/test-component.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MainContainerComponent } from './components/smart/main-container/main-container.component';
 
 const appRoutes: Routes = [
   { path: 'student', component: StudentPageComponent },
@@ -27,12 +32,17 @@ const appRoutes: Routes = [
     StudentPageComponent,
     LessonContainerComponent,
     ContentComponentComponent,
+    TextComponentComponent,
+    ImageComponentComponent,
+    TestComponentComponent,
+    MainContainerComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     RouterModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,11 +22,11 @@ export class TeacherPageComponent implements OnInit {
           },
           {
             'type': 'image',
-            'content': '/static/img/lesson_1/img_1.jpg'
+            'content': 'https://homepages.cae.wisc.edu/~ece533/images/airplane.png'
           },
           {
             'type': 'image',
-            'content': '/static/img/lesson_1/img_2.jpg'
+            'content': 'https://homepages.cae.wisc.edu/~ece533/images/arctichare.png'
           }
         ]
       },
@@ -40,7 +40,7 @@ export class TeacherPageComponent implements OnInit {
           },
           {
             'type': 'video',
-            'content': '/statis/img/lesson_1/video_1.mp4'
+            'content': 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
           },
           {
             'type': 'text',
@@ -68,25 +68,35 @@ export class TeacherPageComponent implements OnInit {
             'content': '3'
           }
         ]
+      },
+      {
+        'id': 3,
+        'content_type': 'test',
+        'learner_type': 'audio',
+        'test_type': 'multiple_choice',
+        'question': '2+2=?',
+        'choices': [
+          {
+            'is_correct': true,
+            'content': '4'
+          },
+          {
+            'is_correct': false,
+            'content': '5'
+          },
+          {
+            'is_correct': false,
+            'content': '3'
+          }
+        ]
       }
     ]
   };
-  public config: any;
-  public collection = { count: this.lessonData.pages.length, data: this.lessonData.pages };
 
   constructor() {
-    this.config = {
-      itemsPerPage: 1,
-      currentPage: 1,
-      totalItems: this.collection.count
-    };
   }
 
   ngOnInit() {
-  }
-
-  pageChanged(event) {
-    this.config.currentPage = event;
   }
 
   public contentToJson(content: any): any {
