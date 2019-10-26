@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-page.component.css']
 })
 export class StudentPageComponent implements OnInit {
+  public lessonData = [];
 
   constructor() { }
 

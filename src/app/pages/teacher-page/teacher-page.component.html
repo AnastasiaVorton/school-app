@@ -1,3 +1,17 @@
-<p>
-  teacher-page works!
-</p>
+<div *ngFor="let page of collection.data">
+  <div *ngIf="page.content_type === 'page'; else test">
+    <p></p>
+<!--    {{contentToJson(page)}}-->
+    <div *ngFor="let content of page.content">
+      {{contentToJson(content)}}
+    </div>
+  </div>
+</div>
+
+<ng-template #test>
+  <p></p>
+  its a test
+</ng-template>
+
+
+<!--<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>-->

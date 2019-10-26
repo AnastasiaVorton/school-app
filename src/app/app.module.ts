@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TeacherPageComponent } from './pages/teacher-page/teacher-page.component';
 import { StudentPageComponent } from './pages/student-page/student-page.component';
+import { LessonContainerComponent } from './components/smart/lesson-container/lesson-container.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { ContentComponentComponent } from './components/dumb/content-component/content-component.component';
 
 const appRoutes: Routes = [
   { path: 'student', component: StudentPageComponent },
@@ -21,12 +24,15 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     TeacherPageComponent,
-    StudentPageComponent
+    StudentPageComponent,
+    LessonContainerComponent,
+    ContentComponentComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
-    RouterModule
+    RouterModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
