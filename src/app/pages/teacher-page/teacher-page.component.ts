@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {BackendService} from '../../services/backend.service';
 import {filter} from 'rxjs/operators';
 import {Observable} from 'rxjs';
+import {LessonPagesService} from '../../services/lesson.pages.service';
 
 @Component({
   selector: 'app-teacher-page',
@@ -95,17 +96,18 @@ export class TeacherPageComponent implements OnInit {
   //     }
   //   ]
   // };
-  public lessonData$: Observable<any>;
+  public lessonData: any;
 
-  constructor(private backendService: BackendService) {
+  constructor(private backendService: BackendService, private lessonService: LessonPagesService) {
     this.backendService
       .getLessonInfo('lesson1')
       .pipe(filter(value => !!value))
-      .subscribe(lessonInfo => this.lessonData$ = lessonInfo);
+      .subscribe(lessonInfo => this.lessonData = lessonInfo);
+    this.lessonService.setLesson(this.lessonData);
   }
 
   ngOnInit() {
-    console.warn(this.lessonData$);
+    console.warn(this.lessonData);
   }
 
   public contentToJson(content: any): any {

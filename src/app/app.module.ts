@@ -15,7 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainContainerComponent } from './components/smart/main-container/main-container.component';
 import { BackendService } from './services/backend.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 const appRoutes: Routes = [
   { path: 'student', component: StudentPageComponent },
@@ -46,7 +47,9 @@ const appRoutes: Routes = [
     RouterModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
