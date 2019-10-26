@@ -2,15 +2,12 @@
 
 <div *ngIf="test.test_type === 'single_choice'">
   <ul *ngFor="let choice of test.choices">
-    <input type="radio" id="radioButton">
-    <label for="radioButton">{{choice.content}}</label>
+    <mat-radio-button id="radioButton" color="#8d6af1">{{choice.content}}</mat-radio-button>
   </ul>
 </div>
 
 <div *ngIf="test.test_type === 'multiple_choice'">
   <ul *ngFor="let choice of test.choices">
-    <input type="checkbox" id="checkboxButton">
-    <label for="checkboxButton">{{choice.content}}</label>
+    <mat-checkbox id="checkboxButton" color="#8d6af1">{{choice.content}}</mat-checkbox>
   </ul>
 </div>
-

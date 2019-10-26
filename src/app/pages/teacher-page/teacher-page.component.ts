@@ -107,7 +107,6 @@ export class TeacherPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.warn(this.lessonData);
   }
 
   public contentToJson(content: any): any {

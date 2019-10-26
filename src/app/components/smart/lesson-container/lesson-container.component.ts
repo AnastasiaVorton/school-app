@@ -9,6 +9,7 @@ import {LessonInterface, PageInterface} from '../../../interfaces/lesson.interfa
 })
 export class LessonContainerComponent implements OnInit, OnChanges {
   @Input() lessonData: any;
+  @Input() isDyslexic: boolean;
   public currentPageIndex = 0;
   public currentPage: any;
 

@@ -1,0 +1,89 @@
+@font-face {
+  font-family: open-dyslexic;
+  src: url('../../../assets/OpenDyslexic-Regular.ttf');
+}
+
+.dyslexic-font {
+  font-family: open-dyslexic, sans-serif;
+}
+
+.main-container {
+  background-color: #8d6af1;
+  height: 100vh;
+  position: relative;
+}
+
+.left {
+  position: absolute;
+  left: 20px;
+  top: 34px;
+}
+
+.lesson-navbar {
+  width: 100%;
+  margin: 0 20px 0 40px;
+  height: 100px;
+  vertical-align: center;
+  position: relative;
+}
+
+
+.lesson-nav {
+  position: absolute;
+  left: 94px;
+  top: 44px;
+  width: 87px;
+  height: 23px;
+  font-family: Roboto;
+  font-size: 19px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.pages {
+  display: flex;
+  padding-top: 47px;
+  flex-direction: row;
+  margin: auto;
+  width: 50%;
+}
+
+.pagination {
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.settings{
+  width: 23.5px;
+  height: 23.9px;
+  background-color: #ffffff;
+  position: absolute;
+  right: 20px;
+  top: 45px;
+}
+
+.send-drawing {
+  width: 60px;
+  height: 60px;
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  background-color: rgba(235, 235, 235, 0.8);
+  border-radius: 50%;
+  position: absolute;
+  right: 80px;
+  z-index: 5;
+  top: 132px;
+}
+
+.submit-drawing {
+  width: 25.5px;
+  height: 24.5px;
+  padding-top: 18px;
+}

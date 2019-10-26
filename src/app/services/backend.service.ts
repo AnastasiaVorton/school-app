@@ -13,6 +13,11 @@ export class BackendService {
     return this.http.get<any>(url, {});
   }
 
+  public getStudentInfo(paramerets: string): Observable<any> {
+    const url = `${this.base}get_student/${paramerets}`;
+    return this.http.get<any>(url, {});
+  }
+
   // public getOrdersList(address: string): Observable<OrdersListInterface> {
   //   return this.http.get<OrdersListInterface>(address, {});
   // }

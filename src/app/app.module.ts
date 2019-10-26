@@ -12,7 +12,6 @@ import { TextComponentComponent } from './components/dumb/text-component/text-co
 import { ImageComponentComponent } from './components/dumb/image-component/image-component.component';
 import { TestComponentComponent } from './components/dumb/test-component/test-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainContainerComponent } from './components/smart/main-container/main-container.component';
 import { BackendService } from './services/backend.service';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
@@ -20,6 +19,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { InfoContainerComponent } from './components/smart/info-container/info-container.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { NotificationsContainerComponent } from './components/smart/notifications-container/notifications-container.component';
+import {MAT_CHECKBOX_CLICK_ACTION, MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 const appRoutes: Routes = [
   { path: 'student', component: StudentPageComponent },
@@ -42,7 +43,6 @@ const appRoutes: Routes = [
     TextComponentComponent,
     ImageComponentComponent,
     TestComponentComponent,
-    MainContainerComponent,
     InfoContainerComponent,
     NotificationsContainerComponent,
   ],
@@ -55,9 +55,13 @@ const appRoutes: Routes = [
     HttpClientModule,
     MatButtonModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCheckboxModule,
+    MatRadioModule
   ],
-  providers: [BackendService],
+  providers: [BackendService,
+    {provide: MAT_CHECKBOX_CLICK_ACTION, useValue: 'check'},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

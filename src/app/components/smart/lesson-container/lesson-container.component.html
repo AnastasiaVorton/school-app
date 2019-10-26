@@ -1,4 +1,6 @@
-<div *ngIf="lessonData" class="container lesson-container" >
+<div *ngIf="lessonData"
+     class="container lesson-container"
+     [class.dyslexic-background]="isDyslexic">
         <div *ngIf="lessonData.pages[currentPageIndex].content_type === 'page'">
           <div *ngFor="let content of lessonData.pages[currentPageIndex].content">
             <app-header-component *ngIf="content.type === 'header'" [content]="content"></app-header-component>
@@ -14,6 +16,6 @@
 </div>
 
 
-<div *ngIf="lessonData.pages[currentPageIndex].comment" class="container comment-padding ">
+<div *ngIf="lessonData.pages[currentPageIndex].comment && isDyslexic === null" class="container comment-padding ">
  {{lessonData.pages[currentPageIndex].comment}}
 </div>
