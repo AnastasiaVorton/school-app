@@ -1,0 +1,61 @@
+.container {
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-left: 40px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.lesson-container{
+  margin-bottom: 30px;
+  padding: 60px 20px 10px 20px;
+  position: relative;
+  min-height: 550px;
+}
+
+.comment-padding {
+  padding: 25px 30px;
+  text-align: left;
+}
+
+.mat-button {
+  width: 40px;
+  height: 40px;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  background-color: rgba(235, 235, 235, 0.9);
+  border-radius: 50%;
+}
+
+.-Icon-Color {
+  width: 11.3px;
+  height: 21.4px;
+  object-fit: contain;
+  background-color: #ffffff;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+}
+
+.dummy-button-container {
+  position: relative;
+}
+
+.right {
+  position: absolute;
+  right: 20px;
+  bottom: 10px
+}
+
+.left {
+  position: absolute;
+  left: 20px;
+  bottom: 20px
+}
+
+.dyslexic-background {
+  background-color: #f0e6dc;
+}

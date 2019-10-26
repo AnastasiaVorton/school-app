@@ -1,0 +1,13 @@
+<h2>{{test.question}}</h2>
+
+<div *ngIf="test.test_type === 'single_choice'">
+  <ul *ngFor="let choice of test.choices">
+    <mat-radio-button id="radioButton" color="#8d6af1">{{choice.content}}</mat-radio-button>
+  </ul>
+</div>
+
+<div *ngIf="test.test_type === 'multiple_choice'">
+  <ul *ngFor="let choice of test.choices">
+    <mat-checkbox id="checkboxButton" color="#8d6af1">{{choice.content}}</mat-checkbox>
+  </ul>
+</div>

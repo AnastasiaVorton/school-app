@@ -1,3 +1,16 @@
-<p>
-  student-page works!
-</p>
+<div *ngIf="studentInfo" class="main-container"
+     [class.dyslexic-font]="studentInfo.dyslexic">
+  <div *ngIf="lessonData">
+    <div class="lesson-navbar">
+      <img src="src/assets/img/left-arrow.svg" width="40px" height="40px" class="left">
+      <span class="lesson-nav">LESSON 1</span>
+      <div class="pages">
+        <div *ngFor="let number of lessonData.pages" class="pagination"></div>
+      </div>
+    </div>
+    <div class="send-drawing">
+      <img src="src/assets/img/paper-plane.svg" class="submit-drawing">
+    </div>
+    <app-lesson-container [lessonData]="lessonData" [isDyslexic]="studentInfo.dyslexic"></app-lesson-container>
+  </div>
+</div>

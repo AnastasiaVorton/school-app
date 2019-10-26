@@ -1,0 +1,21 @@
+<div *ngIf="lessonData"
+     class="container lesson-container"
+     [class.dyslexic-background]="isDyslexic">
+        <div *ngIf="lessonData.pages[currentPageIndex].content_type === 'page'">
+          <div *ngFor="let content of lessonData.pages[currentPageIndex].content">
+            <app-header-component *ngIf="content.type === 'header'" [content]="content"></app-header-component>
+            <app-text-component *ngIf="content.type === 'text'" [content]="content"></app-text-component>
+            <app-image-component *ngIf="content.type === ('image' || 'video')" [content]="content"></app-image-component>
+          </div>
+        </div>
+        <div *ngIf="lessonData.pages[currentPageIndex].content_type === 'test'">
+          <app-test-component [test]="lessonData.pages[currentPageIndex]"></app-test-component>
+        </div>
+  <img src="src/assets/img/right-arrow.svg" width="40px" height="40px" class="right" (click)="changePage('next')">
+  <img src="src/assets/img/left-arrow.svg" width="40px" height="40px" class="left" (click)="changePage('previous')">
+</div>
+
+
+<div *ngIf="lessonData.pages[currentPageIndex].comment && isDyslexic === null" class="container comment-padding ">
+ {{lessonData.pages[currentPageIndex].comment}}
+</div>

@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.main {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.lesson-area {
+  left: 0;
+  width: 80%;
+  background-color: #f8f8f8;
+  height: 100%;
+}
+
+.side-menu {
+  right: 0;
+  width: 20%;
+  background-color: #8d6af1;
+  min-width: 300px;
+}
+
+.left {
+  position: absolute;
+  left: 20px;
+  top: 34px;
+}
+
+.lesson-navbar {
+  width: 100%;
+  margin: 0 20px 0 40px;
+  height: 100px;
+  vertical-align: center;
+  position: relative;
+}
+
+.lesson-nav {
+  position: absolute;
+  left: 80px;
+  top: 40px;
+  width: 87px;
+  height: 23px;
+  font-family: Roboto;
+  font-size: 19px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #cdcdcd;
+}
+
+.pages {
+  display: flex;
+  padding-top: 40px;
+  flex-direction: row;
+  margin: auto;
+  width: 50%;
+}
+
+.pagination {
+  width: 16px;
+  height: 16px;
+  background-color: #8d6af1;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+

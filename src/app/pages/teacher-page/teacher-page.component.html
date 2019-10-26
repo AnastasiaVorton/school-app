@@ -1,3 +1,15 @@
-<p>
-  teacher-page works!
-</p>
+<div *ngIf="lessonData" class="main lesson-area">
+  <div class="lesson-navbar">
+    <img src="src/assets/img/left-arrow-purple.svg" width="40px" height="40px" class="left">
+    <span class="lesson-nav">LESSON 1</span>
+    <div class="pages">
+      <div *ngFor="let number of lessonData.pages" class="pagination"></div>
+    </div>
+  </div>
+  <app-lesson-container [lessonData]="lessonData" [isDyslexic]="null"></app-lesson-container>
+  <!--  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>-->
+</div>
+<div class="main side-menu">
+  <app-info-container></app-info-container>
+</div>
+

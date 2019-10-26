@@ -1,0 +1,7 @@
+<div *ngIf="content.type === 'image' && imgUrl; else video">
+  <img src="{{imgUrl}}" alt="lesson image">
+</div>
+
+<ng-template #video>
+  <iframe src="{{content.content}}" width="620" frameborder="0" allowfullscreen></iframe>
+</ng-template>
