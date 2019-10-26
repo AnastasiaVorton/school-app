@@ -17,6 +17,7 @@
   right: 0;
   width: 20%;
   background-color: #8d6af1;
+  min-width: 300px;
 }
 
 .left {

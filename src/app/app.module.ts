@@ -17,6 +17,9 @@ import { BackendService } from './services/backend.service';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { InfoContainerComponent } from './components/smart/info-container/info-container.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { NotificationsContainerComponent } from './components/smart/notifications-container/notifications-container.component';
 
 const appRoutes: Routes = [
   { path: 'student', component: StudentPageComponent },
@@ -40,6 +43,8 @@ const appRoutes: Routes = [
     ImageComponentComponent,
     TestComponentComponent,
     MainContainerComponent,
+    InfoContainerComponent,
+    NotificationsContainerComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -49,7 +54,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     HttpClientModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
