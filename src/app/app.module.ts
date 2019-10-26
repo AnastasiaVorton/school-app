@@ -13,6 +13,9 @@ import { ImageComponentComponent } from './components/dumb/image-component/image
 import { TestComponentComponent } from './components/dumb/test-component/test-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainContainerComponent } from './components/smart/main-container/main-container.component';
+import { BackendService } from './services/backend.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const appRoutes: Routes = [
   { path: 'student', component: StudentPageComponent },
@@ -42,9 +45,10 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule,
     NgxPaginationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

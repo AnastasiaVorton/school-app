@@ -1,0 +1,19 @@
+<div class="container lesson-container" >
+     <div *ngFor="let page of lessonData.pages">
+        <div *ngIf="page.content_type === 'page'">
+          <div *ngFor="let content of page.content">
+            <app-header-component *ngIf="content.type === 'header'" [content]="content"></app-header-component>
+            <app-text-component *ngIf="content.type === 'text'" [content]="content"></app-text-component>
+            <app-image-component *ngIf="content.type === ('image' || 'video')" [content]="content"></app-image-component>
+          </div>
+        </div>
+        <div *ngIf="page.content_type === 'test'">
+          <app-test-component [test]="page"></app-test-component>
+        </div>
+  </div>
+</div>
+
+<div class="container comment-padding ">
+  Квадрат — это параллелограмм с равными сторонами и углами. Площадь квадрата можно рассчитать
+  2-мя способами: через сторону или диагональ. ... где S — площадь; a — сторона квадрата. Т. е. пл. квадрата равняется квадрату его стороны.
+</div>

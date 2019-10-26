@@ -11,10 +11,6 @@ export class MainContainerComponent implements OnInit {
   ngOnInit() {
   }
 
-  // pageChanged(event) {
-  //   this.config.currentPage = event;
-  // }
-
   public contentToJson(content: any): any {
     return JSON.stringify(content);
   }

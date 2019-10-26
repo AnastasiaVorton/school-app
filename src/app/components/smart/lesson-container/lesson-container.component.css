@@ -1,0 +1,17 @@
+.container {
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-left: 40px;
+  margin-right: 20px;
+}
+
+.lesson-container{
+  margin-top: 100px;
+  margin-bottom: 30px;
+  padding: 80px 20px;
+}
+
+.comment-padding {
+  padding: 25px 30px;
+  text-align: left;
+}
