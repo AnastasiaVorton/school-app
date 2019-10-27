@@ -8,7 +8,7 @@ import {ContentInterface} from '../../../interfaces/content.interface';
 })
 export class ImageComponentComponent implements OnInit {
   @Input() content: ContentInterface;
-  private base = 'http://192.168.43.27:5000';
+  private base = 'http://192.168.43.105:5000';
   public imgUrl;
 
   constructor() {

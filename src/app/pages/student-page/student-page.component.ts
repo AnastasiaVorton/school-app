@@ -4,6 +4,7 @@ import {LessonPagesService} from '../../services/lesson.pages.service';
 import {filter} from 'rxjs/operators';
 import {ActivatedRoute} from '@angular/router';
 import {StudentInfoInterface} from '../../interfaces/student.info.interface';
+import * as io from 'socket.io-client';
 
 @Component({
   selector: 'app-student-page',
@@ -13,6 +14,7 @@ import {StudentInfoInterface} from '../../interfaces/student.info.interface';
 export class StudentPageComponent implements OnInit {
   public lessonData: any;
   public studentInfo: StudentInfoInterface;
+  public socket_pagination;
 
   constructor(private backendService: BackendService, private lessonService: LessonPagesService, private route: ActivatedRoute) {
     this.backendService
@@ -27,6 +29,7 @@ export class StudentPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.socket_pagination = io('http://192.168.43.105:5000/pagination');
   }
 
 }

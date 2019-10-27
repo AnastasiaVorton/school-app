@@ -11,8 +11,8 @@
         <div *ngIf="lessonData.pages[currentPageIndex].content_type === 'test'">
           <app-test-component [test]="lessonData.pages[currentPageIndex]"></app-test-component>
         </div>
-  <img src="src/assets/img/right-arrow.svg" width="40px" height="40px" class="right" (click)="changePage('next')">
-  <img src="src/assets/img/left-arrow.svg" width="40px" height="40px" class="left" (click)="changePage('previous')">
+  <img src="src/assets/img/right-arrow.svg" width="40px" height="40px" class="right" (click)="changePage('next', isTeacher)">
+  <img src="src/assets/img/left-arrow.svg" width="40px" height="40px" class="left" (click)="changePage('previous', isTeacher)">
 </div>
 
 

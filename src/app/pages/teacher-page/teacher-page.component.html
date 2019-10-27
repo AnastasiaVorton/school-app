@@ -6,7 +6,7 @@
       <div *ngFor="let number of lessonData.pages" class="pagination"></div>
     </div>
   </div>
-  <app-lesson-container [lessonData]="lessonData" [isDyslexic]="null"></app-lesson-container>
+  <app-lesson-container [lessonData]="lessonData" [isDyslexic]="null" [isTeacher]="true" [paginationSocket]="socket_pagination"></app-lesson-container>
   <!--  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>-->
 </div>
 <div class="main side-menu">

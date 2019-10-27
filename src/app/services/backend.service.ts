@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class BackendService {
   private headers = {};
-  private base = 'http://192.168.43.27:5000/';
+  private base = 'http://192.168.43.105:5000/';
   constructor(private http: HttpClient) {}
 
   public getLessonInfo(lesson): Observable<any> {
@@ -18,11 +18,4 @@ export class BackendService {
     return this.http.get<any>(url, {});
   }
 
-  // public getOrdersList(address: string): Observable<OrdersListInterface> {
-  //   return this.http.get<OrdersListInterface>(address, {});
-  // }
-  //
-  // public getDriverInfo(address: string): Observable<OperatorInterface> {
-  //   return this.http.get<OperatorInterface>(address, {});
-  // }
 }
