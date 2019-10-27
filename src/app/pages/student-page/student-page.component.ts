@@ -37,6 +37,7 @@ export class StudentPageComponent implements OnInit {
   }
 
   public submitDrawing(event: any): void {
+    console.warn('send clicked');
     this.sendDrawingEvent.emit(true);
   }
 
