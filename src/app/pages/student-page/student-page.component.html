@@ -9,8 +9,14 @@
       </div>
     </div>
     <div class="send-drawing">
-      <img src="src/assets/img/paper-plane.svg" class="submit-drawing">
+      <img src="src/assets/img/paper-plane.svg" class="submit-drawing" (click)="submitDrawing($event)">
     </div>
-    <app-lesson-container [lessonData]="lessonData" [isDyslexic]="studentInfo.dyslexic" [isTeacher]="false" [paginationSocket]="socket_pagination"></app-lesson-container>
+    <app-lesson-container [lessonData]="lessonData"
+                          [isDyslexic]="studentInfo.dyslexic"
+                          [isTeacher]="false"
+                          [paginationSocket]="socket_pagination"
+                          [canvasSocket]="socket_canvas"
+                          [sendDrawing]="sendDrawingEvent">
+    </app-lesson-container>
   </div>
 </div>

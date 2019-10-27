@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {BackendService} from '../../services/backend.service';
 import {LessonPagesService} from '../../services/lesson.pages.service';
 import {filter} from 'rxjs/operators';
@@ -12,9 +12,12 @@ import * as io from 'socket.io-client';
   styleUrls: ['./student-page.component.css']
 })
 export class StudentPageComponent implements OnInit {
+  // @Output() sendDrawing = new EventEmitter<boolean>();
   public lessonData: any;
   public studentInfo: StudentInfoInterface;
   public socket_pagination;
+  public socket_canvas;
+  public sendDrawingEvent = new EventEmitter<boolean>();
 
   constructor(private backendService: BackendService, private lessonService: LessonPagesService, private route: ActivatedRoute) {
     this.backendService
@@ -30,6 +33,11 @@ export class StudentPageComponent implements OnInit {
 
   ngOnInit() {
     this.socket_pagination = io('http://192.168.43.105:5000/pagination');
+    this.socket_canvas = io('http://192.168.43.105:5000/canvas');
+  }
+
+  public submitDrawing(event: any): void {
+    this.sendDrawingEvent.emit(true);
   }
 
 }

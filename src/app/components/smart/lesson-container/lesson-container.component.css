@@ -10,7 +10,7 @@
   margin-bottom: 30px;
   padding: 60px 20px 10px 20px;
   position: relative;
-  min-height: 550px;
+  min-height: 700px;
 }
 
 .comment-padding {
@@ -58,4 +58,14 @@
 
 .dyslexic-background {
   background-color: #f0e6dc;
+}
+
+canvas{
+  position: absolute;
+  /*margin: 100px 20px 40px 40px;*/
+  top: 100px;
+  left: 40px;
+  width: 1000px;
+  height: 700px;
+  z-index: 5;
 }

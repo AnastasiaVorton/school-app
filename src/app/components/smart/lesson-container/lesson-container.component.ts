@@ -1,5 +1,6 @@
-import {ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {LessonPagesService} from '../../../services/lesson.pages.service';
+declare var $: any;
 
 @Component({
   selector: 'app-lesson-container',
@@ -11,11 +12,15 @@ export class LessonContainerComponent implements OnInit, OnChanges {
   @Input() isDyslexic: boolean;
   @Input() isTeacher: boolean;
   @Input() paginationSocket;
+  @Input() canvasSocket;
+  @Input() sendDrawing;
 
   public currentPageIndex = 0;
   public currentPage: any;
+  public sketcher;
 
   constructor(private lessonService: LessonPagesService, private cd: ChangeDetectorRef) {
+
   }
 
   ngOnInit() {
@@ -27,6 +32,9 @@ export class LessonContainerComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    this.sketcher = $('#drawing-canvas').sketchable();
+    const contents = this.sketcher.sketchable('serializer.save');
+    this.canvasSocket.emit('canvas_to_server', {'canvas_content': contents});
   }
 
   public changePage(direction: string, isTeacher: boolean): void {

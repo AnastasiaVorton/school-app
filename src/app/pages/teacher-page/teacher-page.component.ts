@@ -13,7 +13,7 @@ import * as io from 'socket.io-client';
 export class TeacherPageComponent implements OnInit {
   public lessonData: any;
   public socket_pagination;
-
+  public socket_canvas;
 
   constructor(private backendService: BackendService, private lessonService: LessonPagesService) {
     this.backendService
@@ -25,6 +25,7 @@ export class TeacherPageComponent implements OnInit {
 
   ngOnInit() {
     this.socket_pagination = io('http://192.168.43.105:5000/pagination');
+    this.socket_canvas = io('http://192.168.43.105:5000/canvas');
   }
 
   public contentToJson(content: any): any {
